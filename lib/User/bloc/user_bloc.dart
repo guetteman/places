@@ -5,10 +5,10 @@ import 'package:places/User/repository/auth_repository.dart';
 
 class UserBloc implements Bloc {
 
-  final _auth_repository = AuthRepository();
+  final authRepository = AuthRepository();
 
   Future<FirebaseUser> signIn() {
-    return _auth_repository.signIn();
+    return authRepository.signIn();
   }
 
   @override

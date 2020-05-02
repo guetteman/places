@@ -3,8 +3,8 @@ import 'package:places/User/repository/firebase_authentication.dart';
 
 class AuthRepository {
 
-  final auth = FirebaseAuthentication();
+  final firebaseAuthentication = FirebaseAuthentication();
 
-  Future<FirebaseUser> signIn () => auth.signIn();
-
+  Future<FirebaseUser> signIn () => firebaseAuthentication.signIn();
+  signOut() => firebaseAuthentication.signOut();
 }

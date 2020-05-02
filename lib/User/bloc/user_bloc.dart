@@ -13,6 +13,10 @@ class UserBloc implements Bloc {
     return authRepository.signIn();
   }
 
+  signOut() {
+    authRepository.signOut();
+  }
+
   @override
   void dispose() {
 

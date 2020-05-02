@@ -26,6 +26,7 @@ class FirebaseAuthentication {
 
   signOut() async {
     await _auth.signOut();
+    googleSignIn.signOut();
   }
 
 }

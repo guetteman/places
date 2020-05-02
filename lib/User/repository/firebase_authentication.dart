@@ -18,10 +18,14 @@ class FirebaseAuthentication {
           accessToken: googleSignInAuthentication.accessToken
       )
     );
-    FirebaseUser user = await authResult.user;
+    FirebaseUser user = authResult.user;
 
     return user;
 
+  }
+
+  signOut() async {
+    await _auth.signOut();
   }
 
 }

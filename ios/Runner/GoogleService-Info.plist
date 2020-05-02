@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>739036981420-rhao2fhmih3palh727fsb8hodr25sgrq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.739036981420-rhao2fhmih3palh727fsb8hodr25sgrq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAN_NyJGhKtvoWXAhLGK8cnYM7KbSCplqY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>739036981420</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.guetteluis.places</string>
+	<key>PROJECT_ID</key>
+	<string>places-a851c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>places-a851c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:739036981420:ios:320efeca80592abeb99709</string>
+	<key>DATABASE_URL</key>
+	<string>https://places-a851c.firebaseio.com</string>
+</dict>
+</plist>

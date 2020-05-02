@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:places/Place/bloc/place_bloc.dart';
 import 'package:places/User/bloc/user_bloc.dart';
+import 'package:places/User/ui/screens/sign_in_screen.dart';
 import 'package:places/trips_cupertino.dart';
 
 void main() => runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         child: BlocProvider(
             child: MaterialApp(
               title: 'Flutter Demo',
-              home: TripsCupertino(),
+              home: SignInScreen(),
             ),
             bloc: PlaceBloc()
         ),

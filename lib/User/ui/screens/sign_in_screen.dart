@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:places/User/bloc/user_bloc.dart';
+import 'package:places/trips_cupertino.dart';
 import 'package:places/widgets/gradient_background.dart';
 import 'package:places/widgets/green_button.dart';
 
@@ -22,8 +23,21 @@ class _SignInScreen extends State<SignInScreen> {
   Widget build(BuildContext context) {
 
     userBloc = BlocProvider.of(context);
-    return signInGoogleUI();
+    return handleCurrentSession();
 
+  }
+
+  Widget handleCurrentSession() {
+    return StreamBuilder(
+      stream: userBloc.authStatus,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (!snapshot.hasData || snapshot.hasError) {
+          return signInGoogleUI();
+        } else {
+          return TripsCupertino();
+        }
+      },
+    );
   }
 
   Widget signInGoogleUI() {

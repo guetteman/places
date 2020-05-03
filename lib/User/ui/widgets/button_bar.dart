@@ -9,7 +9,7 @@ class ButtonsBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    userBloc = BlocProvider.of(context);
+    userBloc = BlocProvider.of<UserBloc>(context);
 
     return Padding(
         padding: EdgeInsets.symmetric(

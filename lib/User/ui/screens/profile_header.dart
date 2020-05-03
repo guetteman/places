@@ -5,7 +5,17 @@ import 'package:places/User/model/user.dart';
 import 'package:places/User/ui/widgets/button_bar.dart';
 import 'package:places/User/ui/widgets/user_info.dart';
 
-class ProfileHeader extends StatelessWidget {
+
+class ProfileHeader extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    return _ProfileHeader();
+  }
+
+}
+
+class _ProfileHeader extends State<ProfileHeader> {
 
   UserBloc userBloc;
   User user;

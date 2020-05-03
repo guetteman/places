@@ -6,10 +6,7 @@ import 'package:places/User/ui/widgets/profile_places_list.dart';
 class ProfileTrips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    /*return Container(
-      color: Colors.indigo,
-    );*/
+
     return Stack(
       children: <Widget>[
         ProfileBackground(),
@@ -17,11 +14,11 @@ class ProfileTrips extends StatelessWidget {
           children: <Widget>[
             ProfileHeader(),
             ProfilePlacesList()
-
           ],
         ),
       ],
     );
+
   }
 
 }

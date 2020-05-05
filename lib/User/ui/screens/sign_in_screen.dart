@@ -50,14 +50,21 @@ class _SignInScreen extends State<SignInScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                  "Welcome \n This is your travel app",
-                style: TextStyle(
-                  fontFamily: "Lato",
-                  fontSize: 30.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
-                ),
+              Flexible(
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                  child: Text(
+                    "Welcome \n This is your travel app",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: "Lato",
+                      fontSize: 30.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                )
               ),
               GreenButton(
                   text: "Login with Google",

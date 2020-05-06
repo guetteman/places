@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:places/Place/ui/widgets/location_input.dart';
 import 'package:places/widgets/gradient_background.dart';
 import 'package:places/widgets/header_title.dart';
 import 'package:places/widgets/text_input.dart';
@@ -74,6 +75,14 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                   maxLines: 4,
                   controller: descriptionController
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 20.0),
+                  child: LocationInput(
+                      hintText: "Add Location",
+                      controller: null,
+                      iconData: Icons.location_on
+                  ),
+                )
               ],
             ),
           )

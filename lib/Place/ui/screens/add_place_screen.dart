@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:places/widgets/gradient_background.dart';
+import 'package:places/widgets/header_title.dart';
 
 class AddPlaceScreen extends StatefulWidget {
 
@@ -40,6 +41,12 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                     onPressed: () => Navigator.pop(context),
                   ),
                 ),
+              ),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.only(top: 40.0, left: 20.0, right: 10.0),
+                  child: HeaderTitle(title: "Add a new place"),
+                )
               )
             ],
           )

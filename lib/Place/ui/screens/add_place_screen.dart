@@ -1,8 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:places/Place/model/place.dart';
 import 'package:places/Place/ui/widgets/image_card_with_fab_icon.dart';
 import 'package:places/Place/ui/widgets/location_input.dart';
+import 'package:places/User/bloc/user_bloc.dart';
 import 'package:places/widgets/gradient_background.dart';
 import 'package:places/widgets/header_title.dart';
 import 'package:places/widgets/purple_button.dart';
@@ -23,11 +26,15 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreen extends State<AddPlaceScreen> {
 
+
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
+    UserBloc userBloc = BlocProvider.of<UserBloc>(context);
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -97,7 +104,16 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                 ),
                 Container(
                   width: 70.0,
-                  child: PurpleButton(buttonText: "Add place", onPressed: () {}),
+                  child: PurpleButton(buttonText: "Add place", onPressed: () {
+                    userBloc.updatePlacesData(
+                      Place(
+                        name: titleController.text,
+                        description: descriptionController.text,
+                        urlImage: "",
+                        likes: 0
+                      )
+                    ).whenComplete(() => Navigator.pop(context));
+                  }),
                 ),
               ],
             ),
@@ -105,6 +121,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
         ],
       ),
     );
+
   }
 
 }

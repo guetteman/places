@@ -63,15 +63,16 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                 Container(
                   alignment: Alignment.center,
                   child: ImageCardWithFabIcon(
-                    imagePath: widget.image.path,
-                    height: null,
-                    width: null,
-                    onPressedFabIcon: null,
-                    iconData: Icons.camera
+                    imagePath: "assets/img/river.jpeg",
+                    height: 250.0,
+                    width: 350.0,
+                    left: 0.0,
+                    iconData: Icons.camera,
+                    onPressedFabIcon: () {}
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 20.0),
+                  margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
                   child: TextInput(
                       hintText: "Title",
                       inputType: null,

@@ -8,7 +8,7 @@ class ImageCardWithFabIcon extends StatelessWidget {
   final String imagePath;
   final IconData iconData;
   final VoidCallback onPressedFabIcon;
-  double left = 20.0;
+  double left;
 
   ImageCardWithFabIcon({
     Key key,
@@ -49,12 +49,14 @@ class ImageCardWithFabIcon extends StatelessWidget {
     );
 
     return Stack(
-      alignment: Alignment(0.9,1.1),
+      alignment: Alignment(0.9,1.2),
       children: <Widget>[
         card,
         FloatingActionButtonGreen(
           iconData: this.iconData,
-          onPressed: null,
+          onPressed: () {
+
+          },
         )
       ],
     );

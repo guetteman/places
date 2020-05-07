@@ -18,35 +18,50 @@ class ImageCardList extends StatelessWidget {
             iconData: Icons.favorite_border,
             width: 350.0,
             height: 250.0,
-            onPressedFabIcon: null
+            left: 20.0,
+            onPressedFabIcon: () {
+
+            }
           ),
           ImageCardWithFabIcon(
             imagePath: "assets/img/mountain.jpeg",
             iconData: Icons.favorite_border,
             width: 350.0,
             height: 250.0,
-            onPressedFabIcon: null
+            left: 20.0,
+            onPressedFabIcon: () {
+
+            }
           ),
           ImageCardWithFabIcon(
             imagePath: "assets/img/mountain_stars.jpeg",
             iconData: Icons.favorite_border,
             width: 350.0,
             height: 250.0,
-            onPressedFabIcon: null
+            left: 20.0,
+            onPressedFabIcon: () {
+
+            }
           ),
           ImageCardWithFabIcon(
             imagePath: "assets/img/river.jpeg",
             iconData: Icons.favorite_border,
             width: 350.0,
             height: 250.0,
-            onPressedFabIcon: null
+            left: 20.0,
+            onPressedFabIcon: () {
+
+            }
           ),
           ImageCardWithFabIcon(
             imagePath: "assets/img/sunset.jpeg",
             iconData: Icons.favorite_border,
             width: 350.0,
             height: 250.0,
-            onPressedFabIcon: null
+            left: 20.0,
+            onPressedFabIcon: () {
+
+            }
           ),
         ],
       ),

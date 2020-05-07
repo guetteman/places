@@ -5,6 +5,7 @@ import 'package:places/Place/ui/widgets/image_card_with_fab_icon.dart';
 import 'package:places/Place/ui/widgets/location_input.dart';
 import 'package:places/widgets/gradient_background.dart';
 import 'package:places/widgets/header_title.dart';
+import 'package:places/widgets/purple_button.dart';
 import 'package:places/widgets/text_input.dart';
 
 class AddPlaceScreen extends StatefulWidget {
@@ -93,7 +94,11 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                       controller: null,
                       iconData: Icons.location_on
                   ),
-                )
+                ),
+                Container(
+                  width: 70.0,
+                  child: PurpleButton(buttonText: "Add place", onPressed: () {}),
+                ),
               ],
             ),
           )

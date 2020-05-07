@@ -1,29 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:places/widgets/floating_action_button_green.dart';
 
-class ImageCard extends StatelessWidget {
+class ImageCardWithFabIcon extends StatelessWidget {
 
-  String pathImage = "assets/img/beach.jpeg";
+  final double height;
+  final double width;
+  final String imagePath;
+  final IconData iconData;
+  final VoidCallback onPressedFabIcon;
+  double left = 20.0;
 
-  ImageCard(this.pathImage);
+  ImageCardWithFabIcon({
+    Key key,
+    @required this.imagePath,
+    @required this.height,
+    @required this.width,
+    @required this.onPressedFabIcon,
+    @required this.iconData,
+    this.left
+  });
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
 
     final card = Container(
-      height: 350.0,
-      width: 250.0,
+      height: this.height,
+      width: this.width,
       margin: EdgeInsets.only(
-          top: 80.0,
-          left: 20.0
-
+          left: this.left
       ),
 
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(pathImage)
+              image: AssetImage(this.imagePath)
           ),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           shape: BoxShape.rectangle,
@@ -42,7 +52,10 @@ class ImageCard extends StatelessWidget {
       alignment: Alignment(0.9,1.1),
       children: <Widget>[
         card,
-        FloatingActionButtonGreen()
+        FloatingActionButtonGreen(
+          iconData: this.iconData,
+          onPressed: null,
+        )
       ],
     );
   }

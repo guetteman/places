@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:places/Place/ui/widgets/image_card_with_fab_icon.dart';
 import 'package:places/Place/ui/widgets/location_input.dart';
 import 'package:places/widgets/gradient_background.dart';
 import 'package:places/widgets/header_title.dart';
@@ -59,7 +60,16 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
             margin: EdgeInsets.only(top: 120.0, bottom: 20.0),
             child: ListView(
               children: <Widget>[
-                Container(),
+                Container(
+                  alignment: Alignment.center,
+                  child: ImageCardWithFabIcon(
+                    imagePath: widget.image.path,
+                    height: null,
+                    width: null,
+                    onPressedFabIcon: null,
+                    iconData: Icons.camera
+                  ),
+                ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.0),
                   child: TextInput(

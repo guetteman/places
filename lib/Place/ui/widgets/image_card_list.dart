@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'image_card.dart';
+import 'image_card_with_fab_icon.dart';
 
 class ImageCardList extends StatelessWidget {
 
@@ -13,11 +13,41 @@ class ImageCardList extends StatelessWidget {
         padding: EdgeInsets.all(25.0),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          ImageCard("assets/img/beach_palm.jpeg"),
-          ImageCard("assets/img/mountain.jpeg"),
-          ImageCard("assets/img/mountain_stars.jpeg"),
-          ImageCard("assets/img/river.jpeg"),
-          ImageCard("assets/img/sunset.jpeg"),
+          ImageCardWithFabIcon(
+            imagePath: "assets/img/beach_palm.jpeg",
+            iconData: Icons.favorite_border,
+            width: 350.0,
+            height: 250.0,
+            onPressedFabIcon: null
+          ),
+          ImageCardWithFabIcon(
+            imagePath: "assets/img/mountain.jpeg",
+            iconData: Icons.favorite_border,
+            width: 350.0,
+            height: 250.0,
+            onPressedFabIcon: null
+          ),
+          ImageCardWithFabIcon(
+            imagePath: "assets/img/mountain_stars.jpeg",
+            iconData: Icons.favorite_border,
+            width: 350.0,
+            height: 250.0,
+            onPressedFabIcon: null
+          ),
+          ImageCardWithFabIcon(
+            imagePath: "assets/img/river.jpeg",
+            iconData: Icons.favorite_border,
+            width: 350.0,
+            height: 250.0,
+            onPressedFabIcon: null
+          ),
+          ImageCardWithFabIcon(
+            imagePath: "assets/img/sunset.jpeg",
+            iconData: Icons.favorite_border,
+            width: 350.0,
+            height: 250.0,
+            onPressedFabIcon: null
+          ),
         ],
       ),
     );

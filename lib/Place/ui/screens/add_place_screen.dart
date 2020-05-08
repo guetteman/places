@@ -104,15 +104,23 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                 ),
                 Container(
                   width: 70.0,
-                  child: PurpleButton(buttonText: "Add place", onPressed: () {
+                  child: PurpleButton(buttonText: "Add place", onPressed: () async {
+
+                    final user = await userBloc.currentUser;
+
+                    if (user != null) {
+
+                    }
+
                     userBloc.updatePlacesData(
                       Place(
                         name: titleController.text,
                         description: descriptionController.text,
                         urlImage: "",
-                        likes: 0
+                        likes: 0,
                       )
                     ).whenComplete(() => Navigator.pop(context));
+
                   }),
                 ),
               ],

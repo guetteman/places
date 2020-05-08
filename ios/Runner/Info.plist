@@ -55,5 +55,12 @@
     		</array>
     	</dict>
     </array>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Places wants to take a photo. Can we use it?</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Places wants to take a photo. Can we use it?</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Places wants to take a photo. Can we use it?</string>
 </dict>
 </plist>

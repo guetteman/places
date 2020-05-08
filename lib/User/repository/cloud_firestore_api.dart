@@ -32,12 +32,19 @@ class CloudFirestoreAPI {
     CollectionReference placesReference = db.collection(PLACES);
     final user = await _auth.currentUser();
 
-    await placesReference.add({
+    DocumentReference placeReference = await placesReference.add({
       "name": place.name,
       "description": place.description,
       "likes": place.likes,
       "urlImage": place.urlImage,
-      "owner": "${USERS}/${user.uid}"
+      "owner": db.document("${USERS}/${user.uid}")
+    });
+
+    DocumentSnapshot snapshot = await placeReference.get();
+    DocumentReference userReference = db.collection(USERS).document(user.uid);
+    
+    await userReference.updateData({
+      'places': FieldValue.arrayUnion([db.document("${PLACES}/${snapshot.documentID}")])
     });
 
   }

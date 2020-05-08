@@ -117,7 +117,6 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                       StorageTaskSnapshot snapshot = await storageUploadTask.onComplete;
                       String urlImage = await snapshot.ref.getDownloadURL();
 
-                      print(urlImage);
                       userBloc.updatePlacesData(
                         Place(
                           name: titleController.text,

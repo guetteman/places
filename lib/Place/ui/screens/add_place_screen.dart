@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:places/Place/model/place.dart';
@@ -109,17 +110,23 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                     final user = await userBloc.currentUser;
 
                     if (user != null) {
+                      String uid = user.uid;
+                      String path = "${uid}/${DateTime.now().toString()}.jpg";
 
+                      StorageUploadTask storageUploadTask =  await userBloc.uploadFile(path, widget.image);
+                      StorageTaskSnapshot snapshot = await storageUploadTask.onComplete;
+                      String urlImage = await snapshot.ref.getDownloadURL();
+
+                      print(urlImage);
+                      userBloc.updatePlacesData(
+                        Place(
+                          name: titleController.text,
+                          description: descriptionController.text,
+                          urlImage: urlImage,
+                          likes: 0,
+                        )
+                      ).whenComplete(() => Navigator.pop(context));
                     }
-
-                    userBloc.updatePlacesData(
-                      Place(
-                        name: titleController.text,
-                        description: descriptionController.text,
-                        urlImage: "",
-                        likes: 0,
-                      )
-                    ).whenComplete(() => Navigator.pop(context));
 
                   }),
                 ),

@@ -36,6 +36,7 @@ class CloudFirestoreAPI {
       "name": place.name,
       "description": place.description,
       "likes": place.likes,
+      "urlImage": place.urlImage,
       "owner": "${USERS}/${user.uid}"
     });
 

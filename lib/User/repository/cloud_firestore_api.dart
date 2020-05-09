@@ -86,8 +86,8 @@ class CloudFirestoreAPI {
           width: 350.0,
           height: 250.0,
           left: 20.0,
-          onPressedFabIcon: () {
-
+          onPressedFabIcon: () async {
+            await likePlace(place.documentID);
           }
         )
       );
@@ -95,6 +95,17 @@ class CloudFirestoreAPI {
     });
 
     return places;
+
+  }
+
+  Future likePlace(String placeId) async {
+
+    DocumentSnapshot place = await db.collection(PLACES).document(placeId).get();
+    int likes = place.data['likes'];
+
+    await db.collection(PLACES).document(placeId).updateData({
+      "likes": likes + 1
+    });
 
   }
 

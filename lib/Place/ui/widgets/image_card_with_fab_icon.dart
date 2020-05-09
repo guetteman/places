@@ -5,14 +5,14 @@ class ImageCardWithFabIcon extends StatelessWidget {
 
   final double height;
   final double width;
-  final String imagePath;
+  final ImageProvider image;
   final IconData iconData;
   final VoidCallback onPressedFabIcon;
   double left;
 
   ImageCardWithFabIcon({
     Key key,
-    @required this.imagePath,
+    @required this.image,
     @required this.height,
     @required this.width,
     @required this.onPressedFabIcon,
@@ -33,7 +33,7 @@ class ImageCardWithFabIcon extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: NetworkImage(this.imagePath)
+              image: this.image
           ),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           shape: BoxShape.rectangle,

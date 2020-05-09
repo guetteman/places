@@ -81,7 +81,7 @@ class CloudFirestoreAPI {
 
       places.add(
         ImageCardWithFabIcon(
-          imagePath: place.data['urlImage'],
+          image: NetworkImage(place.data['urlImage']),
           iconData: Icons.favorite_border,
           width: 350.0,
           height: 250.0,

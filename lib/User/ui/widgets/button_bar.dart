@@ -38,7 +38,7 @@ class ButtonsBar extends StatelessWidget {
               color: Color.fromRGBO(255, 255, 255, 1),
               onPressed: () {
                 ImagePicker
-                  .pickImage(source: ImageSource.gallery)
+                  .pickImage(source: ImageSource.gallery, maxWidth: 350.0, maxHeight: 350.0)
                   .then((File image) {
                     Navigator.push(
                       context,

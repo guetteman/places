@@ -50,7 +50,7 @@ class CloudFirestoreAPI {
 
   }
 
-  List<ProfilePlace> buildPlaces(List<DocumentSnapshot> placesListSnapshot) {
+  List<ProfilePlace> buildUserPlaces(List<DocumentSnapshot> placesListSnapshot) {
 
     List<ProfilePlace> profilePlaces = List<ProfilePlace>();
 

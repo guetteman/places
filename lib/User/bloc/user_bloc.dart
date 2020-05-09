@@ -32,7 +32,7 @@ class UserBloc implements Bloc {
 
   Future<void> updatePlacesData(Place place) => cloudFirestoreRepository.updatePlacesDataInFirestore(place);
   Future<StorageUploadTask> uploadFile(String path, File image) => firebaseStorageRepository.uploadFile(path, image);
-  List<ProfilePlace> buildPlaces(List<DocumentSnapshot> placesListSnapshot) => cloudFirestoreRepository.buildPlaces(placesListSnapshot);
+  List<ProfilePlace> buildUserPlaces(List<DocumentSnapshot> placesListSnapshot) => cloudFirestoreRepository.buildUserPlaces(placesListSnapshot);
 
   Stream<QuerySnapshot> userPlacesStream(String uid) =>
       Firestore.instance.collection(CloudFirestoreAPI().PLACES)

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:places/Place/model/place.dart';
 import 'package:places/User/model/user.dart';
+import 'package:places/User/ui/widgets/profile_place.dart';
 
 class CloudFirestoreAPI {
 
@@ -46,6 +47,27 @@ class CloudFirestoreAPI {
     await userReference.updateData({
       'places': FieldValue.arrayUnion([db.document("${PLACES}/${snapshot.documentID}")])
     });
+
+  }
+
+  List<ProfilePlace> buildPlaces(List<DocumentSnapshot> placesListSnapshot) {
+
+    List<ProfilePlace> profilePlaces = List<ProfilePlace>();
+
+    placesListSnapshot.forEach((place) {
+
+      profilePlaces.add(ProfilePlace(
+        Place(
+          name: place.data['name'],
+          description: place.data['description'],
+          urlImage: place.data['urlImage'],
+          likes: place.data['likes']
+        )
+      ));
+
+    });
+
+    return profilePlaces;
 
   }
 

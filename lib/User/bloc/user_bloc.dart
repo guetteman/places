@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:places/Place/model/place.dart';
 import 'package:places/Place/repository/firebase_storage_repository.dart';
+import 'package:places/Place/ui/widgets/image_card_with_fab_icon.dart';
 import 'package:places/User/model/user.dart';
 import 'package:places/User/repository/auth_repository.dart';
 import 'package:places/User/repository/cloud_firestore_api.dart';
@@ -23,25 +24,25 @@ class UserBloc implements Bloc {
   Stream<FirebaseUser> get authStatus => firebaseStream;
   Future<FirebaseUser> get currentUser => FirebaseAuth.instance.currentUser();
   Future<FirebaseUser> signIn() => authRepository.signIn();
+  signOut() {
+    authRepository.signOut();
+  }
 
   Stream<QuerySnapshot> placesListStream = Firestore.instance.collection(CloudFirestoreAPI().PLACES).snapshots();
   Stream<QuerySnapshot> get placesStream => placesListStream;
 
-
   void updateUserData(User user) => cloudFirestoreRepository.updateUserDataInFirestore(user);
-
   Future<void> updatePlacesData(Place place) => cloudFirestoreRepository.updatePlacesDataInFirestore(place);
-  Future<StorageUploadTask> uploadFile(String path, File image) => firebaseStorageRepository.uploadFile(path, image);
   List<ProfilePlace> buildUserPlaces(List<DocumentSnapshot> placesListSnapshot) => cloudFirestoreRepository.buildUserPlaces(placesListSnapshot);
+
+  Future<StorageUploadTask> uploadFile(String path, File image) => firebaseStorageRepository.uploadFile(path, image);
+  List<ImageCardWithFabIcon> buildPlaces(List<DocumentSnapshot> placesListSnapshot) => cloudFirestoreRepository.buildPlaces(placesListSnapshot);
 
   Stream<QuerySnapshot> userPlacesStream(String uid) =>
       Firestore.instance.collection(CloudFirestoreAPI().PLACES)
           .where("owner", isEqualTo: Firestore.instance.document("${CloudFirestoreAPI().USERS}/${uid}"))
           .snapshots();
 
-  signOut() {
-    authRepository.signOut();
-  }
 
   @override
   void dispose() {

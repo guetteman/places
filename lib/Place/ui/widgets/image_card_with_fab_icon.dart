@@ -33,7 +33,7 @@ class ImageCardWithFabIcon extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(this.imagePath)
+              image: NetworkImage(this.imagePath)
           ),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           shape: BoxShape.rectangle,

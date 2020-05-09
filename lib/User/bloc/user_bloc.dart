@@ -34,6 +34,11 @@ class UserBloc implements Bloc {
   Future<StorageUploadTask> uploadFile(String path, File image) => firebaseStorageRepository.uploadFile(path, image);
   List<ProfilePlace> buildPlaces(List<DocumentSnapshot> placesListSnapshot) => cloudFirestoreRepository.buildPlaces(placesListSnapshot);
 
+  Stream<QuerySnapshot> userPlacesStream(String uid) =>
+      Firestore.instance.collection(CloudFirestoreAPI().PLACES)
+          .where("owner", isEqualTo: Firestore.instance.document("${CloudFirestoreAPI().USERS}/${uid}"))
+          .snapshots();
+
   signOut() {
     authRepository.signOut();
   }
